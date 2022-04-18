@@ -1,0 +1,10 @@
+{
+    "movie": {
+      "searchChar": "Caractère de recherche",
+      "searchName": "Rechercher le caractère que vous voulez",
+      "charName": "Le nom du personnage: ",
+      "name": "Nom: ",
+      "description": "La description: ",
+      "modified" : "Modifié: "
+    }
+  }

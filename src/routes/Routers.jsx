@@ -1,0 +1,15 @@
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Home from "../pages/Home";
+import Movie from "../pages/Movie";
+
+function Routers() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/movie" element={<Movie />} />
+    </Routes>
+  );
+}
+
+export default Routers;

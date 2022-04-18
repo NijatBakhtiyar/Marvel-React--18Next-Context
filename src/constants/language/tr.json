@@ -1,0 +1,15 @@
+{
+  "movie": {
+    "searchChar": "Karakter Ara",
+    "searchName": "Aramak istediğiniz karakteri yazınız",
+    "charName": "Karakter Adı: ",
+    "name": "İsim: ",
+    "description": "Tanım: ",
+    "modified": "Güncellendi: "
+  },
+  "product": {},
+  "general": {},
+  "home": {
+    "p": "akfhjaşsdkfiasd asdifjkasidfkjasidf asdjfi"
+  }
+}

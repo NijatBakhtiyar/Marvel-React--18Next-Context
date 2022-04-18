@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+body {
+  background: #222;
+  font-family: "Roboto", sans-serif;
+}
+
+ /* Scroll Style */
+:is(body, .movie-modal)::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 10px #222;
+  background-color: #f5f5f5;
+}
+
+:is(body, .movie-modal)::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f5f5f5;
+}
+
+:is(body, .movie-modal)::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #830000;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* INTRODUCTION */
+.intro {
+  width: 100%;
+  position: relative;
+}
+
+.intro .back-img img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.intro .marvel-img {
+  position: absolute;
+  max-width: 400px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0px;
+}
+
+.intro .marvel-img img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* MOVIES */
+.films {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 105px;
+  column-gap: 64px;
+  position: relative;
+  min-height: 300px;
+}
+
+.films .card {
+  padding: 0 12px;
+  border: 1px solid #fff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.films .card-top {
+  border-top: 1px solid #fff;
+  margin-top: -50px;
+}
+
+.films .card-top img {
+  margin-top: 10px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.films .card-bottom {
+  padding: 16px 0;
+  color: #fff;
+  text-align: center;
+}
+
+.films .card-bottom h6 {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+/* Pagination */
+.pagination-buttons {
+  margin: 90px 0;
+  display: flex;
+  justify-content: end;
+}
+
+.pagination-buttons ul {
+  display: flex;
+  gap: 10px;
+}
+
+.pagination-buttons ul li {
+  padding: 2px 16px;
+  border-radius: 30px;
+}
+
+.pagination-buttons ul li.selected {
+  background: #7e7e7e;
+}
+
+.pagination-buttons ul a {
+  color: #7e7e7e;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.15px;
+}
+
+.pagination-buttons ul li.selected a {
+  color: black;
+}
+
+:is(.prev-arrow, .next-arrow)i {
+  font-size: 24px;
+  color: #7e7e7e;
+  cursor: pointer;
+}
+
+.page-loading {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  position: absolute;
+}
+
+.page-loading #camera-body,
+.page-loading #reel-1,
+.page-loading #reel-2 {
+  fill: #af1313;
+  fill-opacity: 0.95;
+  stroke: none;
+}
+
+.page-loading span {
+  margin-top: 10px;
+  color: #7e7e7e;
+  font-weight: 500;
+}
+
+/* Search Part */
+.row {
+  display: flex;
+  align-items: flex-end;
+  margin: 120px 0 200px;
+}
+
+.search {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.search label {
+  color: #fff;
+  margin-bottom: 21px;
+  font-size: 18px;
+  line-height: 21px;
+}
+.search input {
+  width: 600px;
+  border: 1px solid #f4f4f4;
+  padding: 20px 25px;
+  background: unset;
+  color: #fff;
+}
+
+.search input::placeholder {
+  font-size: 18px;
+}
+
+.search .movie-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: hsl(0deg 0% 26%);
+  width: 600px;
+  position: absolute;
+  z-index: 1;
+  top: 100px;
+  padding: 15px 30px;
+  max-height: 300px;
+  overflow-y: auto;
+  color: #fff;
+}
+.search .movie-modal a {
+  color: #fff;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.search svg {
+  position: absolute;
+  right: 20px;
+  top: 40px;
+}
+
+/* Language Buttons  */
+.language-buttons {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.language-buttons button {
+  background: #7e7e7e;
+  padding: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  border: none;
+}
+
+.language-buttons button.active {
+  background: #ededed;
+}
+
+/* Movie Page */
+.movie {
+  margin: 50px 0;
+  display: flex;
+  gap: 50px;
+  color: #5799ef;
+}
+
+.movie .info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.movie .info p {
+  font-size: 18px;
+  line-height: 30px;
+  max-width: 700px;
+}
+
+.movie .info span {
+  line-height: 30px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+  .films {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 44px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .films {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .films {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
