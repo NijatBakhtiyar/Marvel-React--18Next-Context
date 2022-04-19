@@ -11,7 +11,7 @@ function MovieModal({ movies }) {
   return (
     <div className="movie-modal">
       {movies?.map(movie => (
-        <Link to="/movie" onClick={() => clickMovie(movie)} key={movie.id}>{t("movie.charName")} {movie.name}</Link>
+        <Link to={`/movie/${movie.name}`} onClick={() => clickMovie(movie)} key={movie.id}>{t("movie.charName")} {movie.name}</Link>
       ))}
     </div>
   );

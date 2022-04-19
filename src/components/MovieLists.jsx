@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Pagination from "./Pagination";
+import { Link } from "react-router-dom";
+import { useMoviesContext } from "../context/MoviesContext";
 
 async function getMovies(page, count = 20) {
   // import.meta.env.VITE_PUBLIC_KEY
@@ -10,13 +12,14 @@ async function getMovies(page, count = 20) {
   const url = `https://gateway.marvel.com/v1/public/characters?ts=1&apikey=${publicKey}&hash=${hash}&limit=${count}&offset=${offset}`;
   const result = await axios(url);
   return result.data.data;
-} 
+}
 
 function MovieLists() {
   const [movieData, setMovieData] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
+  const { clickMovie } = useMoviesContext();
 
   useEffect(() => {
     const localData = localStorage.getItem(currentPage);
@@ -89,7 +92,7 @@ function MovieLists() {
             </div>
           ) : (
             movieData.results.map((value) => (
-              <a href="#" className="card" key={value.id}>
+              <Link to={`/movie/${value.name}`} className="card" key={value.id} onClick={() => clickMovie(value)}>
                 <div className="card-top">
                   <img
                     src={value.thumbnail.path + "/portrait_xlarge.jpg"}
@@ -99,7 +102,7 @@ function MovieLists() {
                 <div className="card-bottom">
                   <h6>{value.name}</h6>
                 </div>
-              </a>
+              </Link>
             ))
           )}
         </div>

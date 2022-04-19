@@ -7,7 +7,9 @@ function Routers() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/movie" element={<Movie />} />
+      <Route path="/movie" >
+        <Route path=":name" element={<Movie />} />
+      </Route>
     </Routes>
   );
 }
