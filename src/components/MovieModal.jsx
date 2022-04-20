@@ -5,13 +5,13 @@ import { useMoviesContext } from "../context/MoviesContext";
 
 
 function MovieModal({ movies }) {
-  const { clickMovie } = useMoviesContext();
+  const { clickMovie, setShowModal } = useMoviesContext();
   const { t } = useTranslation();
 
   return (
     <div className="movie-modal">
       {movies?.map(movie => (
-        <Link to={`/movie/${movie.name}`} onClick={() => clickMovie(movie)} key={movie.id}>{t("movie.charName")} {movie.name}</Link>
+        <Link to={`/movie/${movie.name}`} onClick={() => (clickMovie(movie), setShowModal(null))} key={movie.id}>{t("movie.charName")} {movie.name}</Link>
       ))}
     </div>
   );

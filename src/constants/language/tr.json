@@ -5,7 +5,9 @@
     "charName": "Karakter Adı: ",
     "name": "İsim: ",
     "description": "Tanım: ",
-    "modified": "Güncellendi: "
+    "modified": "Güncellendi: ",
+    "series": "Seriler: ",
+    "films": "Filmler: "
   },
   "product": {},
   "general": {},

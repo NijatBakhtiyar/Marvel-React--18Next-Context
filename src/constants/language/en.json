@@ -5,6 +5,8 @@
       "charName": "Character Name: ",
       "name": "Name: ",
       "description": "Description: ",
-      "modified" : "Modified: "
+      "modified" : "Modified: ",
+      "series": "Series: ",
+      "films": "Films: "
     }
   }
